@@ -32,6 +32,6 @@ public class ExamenController {
 
     @GetMapping (value = "{id}")
     public Examen obtenerExamenId (@PathVariable ("idexamen") Long idexamen){
-        return examenService.obtenerExamen(idexamen)
+        return examenService.obtenerExamen(idexamen);
     }
 }

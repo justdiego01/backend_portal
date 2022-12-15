@@ -33,6 +33,6 @@ public class PreguntaController {
 
     @GetMapping (value = "{id}")
     public Pregunta obtenerPreguntaId (@PathVariable ("idpregunta") Long idpregunta){
-        return preguntaService.obtenerPregunta(idpregunta)
+        return preguntaService.obtenerPregunta(idpregunta);
     }
 }
