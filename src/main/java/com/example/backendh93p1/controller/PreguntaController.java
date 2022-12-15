@@ -6,13 +6,12 @@ import com.example.backendh93p1.services.ExamenService;
 import com.example.backendh93p1.services.PreguntaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
 @RestController
-@RequestMapping("/pregunta")
+@RequestMapping("/preguntas")
 @CrossOrigin("*")
 public class PreguntaController {
 
