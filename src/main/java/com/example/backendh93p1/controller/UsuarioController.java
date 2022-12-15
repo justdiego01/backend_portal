@@ -30,15 +30,15 @@ public class UsuarioController {
     @PostMapping("/registrarUsuario")
     public UsuariosEntity agregarUsuario (@RequestBody UsuariosEntity userJsonEntity) throws Exception{
 
-        Set<UsuarioRolEntity> userRolController =  new HashSet<>();
+         Set<UsuarioRolEntity> userRolController =  new HashSet<>();
 
-        RolEntity rol = new RolEntity();
-        rol.setIdrol(1);
-        rol.setNombrol("estudiante");
+         RolEntity rol = new RolEntity();
+         rol.setIdrol(1);
+         rol.setNombrol("estudiante");
 
-        UsuarioRolEntity userrol = new UsuarioRolEntity();
-        userrol.setUsuariorol(userJsonEntity);
-        userrol.setRolusario(rol);
+         UsuarioRolEntity userrol = new UsuarioRolEntity();
+         userrol.setUsuariorol(userJsonEntity);
+         userrol.setRolusario(rol);
 
         userRolController.add(userrol);
 
