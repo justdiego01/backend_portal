@@ -14,19 +14,29 @@ public class CategoriaController {
     @Autowired
     private CategoriaService categoriaService;
 
-    @GetMapping ("/listar")
-    public ResponseEntity<?> listarCategoria() {
+    @PostMapping("/agregar")
+    public ResponseEntity<Categoria> guardarCategoria(@RequestBody Categoria categoria){
+        Categoria categoriaGuardada = categoriaService.agregarCategoria(categoria);
+        return ResponseEntity.ok(categoriaGuardada);
+    }
+
+    @GetMapping("/{categoriaId}")
+    public Categoria listarCategoriaPorId(@PathVariable("categoriaId") Long categoriaId){
+        return categoriaService.obtenerCategoria(categoriaId);
+    }
+
+    @GetMapping("/obtener")
+    public ResponseEntity<?> listarCategorias(){
         return ResponseEntity.ok(categoriaService.obtenerCategorias());
     }
 
-    @GetMapping ("/listar/{idCategoria}")
-    public Categoria listarCategoriaId (@PathVariable ("idCategoria") Long idCategoria) {
-        return categoriaService.obtenerCategoria(idCategoria);
+    @PutMapping("/modificar")
+    public Categoria actualizarCategoria(@RequestBody Categoria categoria){
+        return categoriaService.actualizarCategoria(categoria);
     }
 
-    @PostMapping ("/agregar")
-    public ResponseEntity<Categoria> agregarCategoria (@RequestBody Categoria categoria) {
-        Categoria categorianueva = categoriaService.agregarCategoria(categoria);
-        return ResponseEntity.ok(categorianueva);
+    @DeleteMapping("/eliminar/{categoriaId}")
+    public void eliminarCategoria(@PathVariable("categoriaId") Long categoriaId){
+        categoriaService.eliminarCategoria(categoriaId);
     }
 }
