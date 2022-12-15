@@ -34,7 +34,7 @@ public class UsuarioController {
 
          RolEntity rol = new RolEntity();
          rol.setIdrol(1);
-         rol.setNombrol("estudiante");
+         rol.setNombrol("Cliente");
 
          UsuarioRolEntity userrol = new UsuarioRolEntity();
          userrol.setUsuariorol(userJsonEntity);
